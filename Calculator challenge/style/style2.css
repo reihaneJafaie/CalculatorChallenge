@@ -1,0 +1,93 @@
+@import url(reset.css);
+
+.style1 {
+   background-color:#A46BF5;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 20px;
+   color: black;
+}
+
+.style2 {
+   background-color:#6e1ae4;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 20px;
+   color: black;
+}
+
+.style3{
+   background-color:#240a47;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 20px;
+   color: rgb(255, 255, 255);
+}
+
+
+.sectionBlog{
+   position: relative;
+   height: 1800px;
+}
+#blog1{
+   position: absolute;
+   top:5%;
+   right: 10%;
+}
+
+#blog2{
+   position: absolute;
+   top:10%;
+   right: 50%;
+}
+
+#blog3{
+   position: absolute;
+   top:20%;
+   right: 80%;
+}
+
+#blog4{
+   position: absolute;
+   top:30%;
+   right: 65%;
+}
+
+
+#blog5{
+   position: absolute;
+   top:40%;
+   right: 45%;
+}
+
+#blog6{
+   position: absolute;
+   top:49%;
+   right: 20%;
+}
+
+#blog7{
+   position: absolute;
+   top:60%;
+   right: 50%;
+}
+
+
+#blog8{
+   position: absolute;
+   top:75%;
+   right: 20%;
+}
+
+
+#blog9{
+   position: absolute;
+   top:80%;
+   right: 60%;
+   
+}
+
+

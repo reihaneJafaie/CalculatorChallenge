@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculator challenge</title>
+   <link rel="stylesheet" href="style/style.css">
+   <link rel="stylesheet" href="style/bootstrap.min.css">
+   <script src="script/all.min.js"></script>
+   <link rel="stylesheet" href="style/animate.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+</head>
+<body>
+
+   <!--Nav-->
+   <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/icons8-math-48.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active alistheader px-2 mx-3" aria-current="page" href="#">𝑯𝒐𝒎𝒆   </a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active alistheader px-2 mx-3" aria-current="page" href="html/contentWeblog.html">   𝑾𝒆𝒃𝒍𝒐𝒈    </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link active alistheader px-2 mx-3" aria-current="page" href="#">   𝑯𝒆𝒍𝒑    </a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link active alistheader px-2 mx-3" aria-current="page" href="#">𝑨𝒃𝒐𝒖𝒕 𝑴𝒆</a>
+             </li>
+              
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="buttonSearch rounded-3 text-center pt-2 border-0 text-white d-flex justify-content-center px-3" role="button">Search</button>
+          </form>
+        </div>
+      </div>
+   </nav>
+
+   
+   <article>
+      <!--APP-->
+      <section class="py-5">
+         <div id="app" class="py-3 ">
+            <div id="calc" class="border border-secondary d-flex flex-column ">
+               <!--nav nwe -->
+               <div id="mySidenav " class="sidenav pb-3">
+                  <div class="navslid2 ">
+                     <div class="text-end p-2" id="xsymbol">
+                        <i class="fa-solid fa-xmark" style="color: #1e3050;"></i>
+                     </div>
+                     
+                     <h6 class="h6 px-2">Calculator</h6>
+                     <div class="py-2 ps-3 " id="standardBtn" onclick="toggeleMode('standard')"  >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-calculator fs-5"></i>
+                           Standard
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3" id="programmerBtn" onclick="toggeleMode('programmer')"  >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-code"></i>
+                           programmer
+                        </a>
+                     </div>
+                     <h6 class="h6 px-2">Convert</h6>
+                     <div class="py-1 ps-3 displayMode"  onclick="toggeleMode('ConvertLength')" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-ruler-vertical"></i>
+                           Length
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode" onclick="sweetAlertConvert()" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-dice-d6"></i>
+                           Volume
+                        </a>
+                     </div>
+                     
+                     <div class="py-1 ps-3 displayMode" onclick="sweetAlertConvert()" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-weight-hanging"></i>
+                           Wight and mass
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode" onclick="sweetAlertConvert()" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-temperature-three-quarters"></i>
+                           temperature
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode"onclick="sweetAlertConvert()" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-fire-flame-curved"></i>
+                           Energy
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode"onclick="sweetAlertConvert()">
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-person-running"></i>
+                           Speed
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode"onclick="sweetAlertConvert()" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-regular fa-clock"></i>
+                           Time
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode" onclick="sweetAlertConvert()" >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-d"></i>
+                           data
+                        </a>
+                     </div>
+                     <div class="py-1 ps-3 displayMode" onclick="sweetAlertConvert()"  >
+                        <a href="#" class="fst-italic">
+                           <i class="fa-solid fa-bolt"></i>
+                           Pressure
+                        </a>
+                     </div>
+
+                  </div>   
+               </div>
+
+
+               
+               <!--standard-->
+               <div id="standard" class="standard modes ">
+                  <!--ctrl btn and title -->
+                  <section class="title d-flex fs-6 fw-lighter ">
+                     <span style="padding: 8px; padding-left: 10px;">Calculator</span>
+                     <div class="ctrl-btns d-flex text-center">
+                        <div class="ctrl-btn px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7c2xCQAwDAQx7790AukCLl28QYKrrwAAAAAAAADgc5Y1rpskN66bJDeumyQHAAAAAAAAAE/VBW1Ir1GTIcCQAAAAAElFTkSuQmCC">
+                        </div>
+                        <div class="ctrl-btn px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVHhe7c4xagQwAAPB+/+nkz44pFgPOKAB1avPzMzMzMyfvv7ZrjtFXt51p8jLu+4UeXnX8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT//Qy8vutOkZd33Sny8q47RV7ezMzMzMyvPp9v5AB9n9NSgHEAAAAASUVORK5CYII=">
+                        </div>
+                        <div class="ctrl-btn close px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVHhe7ZpbCsIwFAW7JbfkRnTjornSA6UkpY/kvnoGgrR+dOagf50IIYQQQgghR3nMnx5Qd3mV8ynn+b+yRRzERZxUkAd952M9AuLhM3wE+aktH2g5wjoeLsP/Dq0Ha45g7mApYB4PLETcxANNIXfxQEPMbTwYKeg+HowQDRMPegqHiwc9xMPGgysB4ePBmZA08eBIULp4sCcsbTzYCkwfD1qht4gHtRGWJ3U8aI1wi3jh1gO04nFSj1CLl+vavXQjtOLl/tZ3KdgTmHaEI2HpRjgTlGaEKyHhR+gREHaEnuLhRhghHGaEkaLuR9AQdDuCppi7ESyE3IxgKWI+grlAwcyBr8gU3uVYx4P1COKmgjzIOh5gBLV4oP5y4gaeXAghhBBCCPHPNP0A9SOjGKIGTtMAAAAASUVORK5CYII=">
+                        </div>
+                     </div>
+                  </section>
+
+                  <!--forms and history-->
+                  <section class="menu d-flex pt-1">
+                     <div id="menubarStandard"  class="btn menu-btn menubar border-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="  mt-1 bi bi-justify menu-icon text-Secondary p-2" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                     </div>
+                     <span class="fs-5 fw-bold pe-none mt-3">Standard</span>
+                     <div class="btn history-btn border-0" ">
+                        <img class="history-img p-2 iconshover mt-1 " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHISURBVFhH7ZY5TsQwFIanREL0rGIVcBeWjoLtAKwFi+AmCKiR2GmAgoOwXIAaEBJi5//CPMmKsjiJy3zSpxm/PL94Mo7tRk1NQfrllryRj/JNvso7eS0XZbcMTp88lN/yN8dPuS87ZCmskDEn+ZXE3uWBnJK9skW2yhE5LY8kOeQ+y3FZGHcAPG5rn0lumsegPJH04YmtyELYDeebnz9yTSZhuUmsy6+mEwR8saL22LdlGlkDAAbB9SfpPSesKDKzs7C8LE4lOXtRywMrmmSctLgLc4KJydvRRSAP94Zx46TF4xxL8lgnguI7gBlJ3mXUCojvAIYlefdRKyA2gCRd2iSxl6iVA0kk0ykP94ZxXQoN4EGSzGMLBUs1Nb3+gitJMmt7KGYlNb0m4ZIkmY0lFPYaLkStHHokiwaLxwCBirAQfUhqdhLwgf2cETPyqlxIau1ELU8YKRsIHdN2Qh82JDWo1U6gCJPStlN2taJsSus/RqAMq9KOYRwyhmQe5JxL+nDzZVkJjlUcryjIxGResLaPSo5jyHdeNa65R7LSvzwOh4ldyUymeJbkMOFKH0qzYD/nXWZBuZUsrch3Ylzz2vNrav5pNP4ArhaxkX71zlYAAAAASUVORK5CYII=">
+                     </div>
+                  </section>
+
+                  <!--show main-display and history-display-->
+                  <section class="d-flex flex-column " >
+                     <div class="prev-operation">
+                        <span  class="text-Secondary p-2" id="history-display">0</span>
+                     </div>
+                     <div class="curr-operation  px-2"id="display" >
+                        <span style="font-size: 40px;font-weight: 500; " class="p-2"  id="main-display">0</span>
+                     </div>
+                  </section>
+
+                  <!--M???-->
+                  <section class="mem-btns d-flex flex-row px-1">
+                     <div class="btn border-0">
+                        <div class="" id="" onclick="">MC</div>
+                     </div>
+                     <div class="btn border-0">
+                        <div class="" id="" onclick="">MR</div>
+                     </div>
+                     <div class="btn border-0">
+                        <div class="" id="" onclick="">M+</div>
+                     </div>
+                     <div class="btn border-0">
+                        <div class="" id="" onclick="">M-</div>
+                     </div>
+                     <div class="btn border-0">
+                        <div class="" id="" onclick="">MS</div>
+                     </div>
+                     <div class="btn border-0">
+                        <div class= "" id="mToggele" onclick="">M</div>
+                     </div>
+                  </section>
+
+                  <!--Numbers-->
+                  <section class="buttons p-2 boxNum">
+
+                     
+                     <button onclick="calculatePercentage()" class="btn" value="%">%</button>
+                     <button onclick="CE()" value="CE" class="btn ">CE</button>
+                     <button onclick="C()" value="C" class="btn ">C</button>
+                     <button onclick="backspace()" value="delete" class="btn "><i class="fa-solid fa-delete-left"></i></button>
+
+                     <button onclick="reciprocal()"  value="1/x" class="btn">1/x</button>
+                     <button onclick="square()" value="x2" class="btn">x <sup>2</sup></button>
+                     <button  value="&radic;x" class="btn" onclick="squareRoot()" id="">&radic;x</button>
+                     <button onclick="calc('/')" value="&divide;" class="btn  " id="">&divide;</button>
+
+                     <button onclick="addDigitOrDecimal(this.value)" value="7" class="btn num" id="seven">7</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="8" class="btn num" id="eight">8</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="9" class="btn num" id="nine">9</button>
+                     <button onclick="calc('*')" value="x" class="btn   operator" id="times">X</button>
+
+                     <button onclick="addDigitOrDecimal(this.value)" value="4" class="btn num" id="four">4</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="5" class="btn num" id="five">5</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="6" class="btn num" id="six">6</button>
+                     <button onclick="calc('-')" value="-" class="btn  operator " id="minus">_</button>
+
+                     <button onclick="addDigitOrDecimal(this.value)" value="1" class="btn num" id="one">1</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="2" class="btn num" id="two">2</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="3" class="btn num" id="three">3</button>
+                     <button onclick="calc('+')" value="+" class="btn  operator" id="plus">+</button>
+
+                     <button onclick="changeSign()" value="+/_" class="btn  ">+/_</button>
+                     <button onclick="addDigitOrDecimal(this.value)" value="0" class="btn num" id="zero">0</button>
+                     <button onclick="addDigitOrDecimal('.')" value="." class="btn  num" id="dot">.</button>
+                     <button   value="=" class="btn   operator" id="equal">=</button>
+
+                  </section>
+
+               </div>
+
+               <!--progarmmer-->
+               <div id="programmer" class="programmer modes">
+
+
+                  <section class="title d-flex fs-6 fw-lighter ">
+                     <span style="padding: 8px; padding-left: 10px;">Calculator</span>
+                     <div class="ctrl-btns d-flex text-center">
+                        <div class="ctrl-btn px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7c2xCQAwDAQx7790AukCLl28QYKrrwAAAAAAAADgc5Y1rpskN66bJDeumyQHAAAAAAAAAE/VBW1Ir1GTIcCQAAAAAElFTkSuQmCC">
+                        </div>
+                        <div class="ctrl-btn px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVHhe7c4xagQwAAPB+/+nkz44pFgPOKAB1avPzMzMzMyfvv7ZrjtFXt51p8jLu+4UeXnX8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT//Qy8vutOkZd33Sny8q47RV7ezMzMzMyvPp9v5AB9n9NSgHEAAAAASUVORK5CYII=">
+                        </div>
+                        <div class="ctrl-btn close px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVHhe7ZpbCsIwFAW7JbfkRnTjornSA6UkpY/kvnoGgrR+dOagf50IIYQQQgghR3nMnx5Qd3mV8ynn+b+yRRzERZxUkAd952M9AuLhM3wE+aktH2g5wjoeLsP/Dq0Ha45g7mApYB4PLETcxANNIXfxQEPMbTwYKeg+HowQDRMPegqHiwc9xMPGgysB4ePBmZA08eBIULp4sCcsbTzYCkwfD1qht4gHtRGWJ3U8aI1wi3jh1gO04nFSj1CLl+vavXQjtOLl/tZ3KdgTmHaEI2HpRjgTlGaEKyHhR+gREHaEnuLhRhghHGaEkaLuR9AQdDuCppi7ESyE3IxgKWI+grlAwcyBr8gU3uVYx4P1COKmgjzIOh5gBLV4oP5y4gaeXAghhBBCCPHPNP0A9SOjGKIGTtMAAAAASUVORK5CYII=">
+                        </div>
+                     </div>
+                  </section>
+
+                   <!--forms and history-->
+                   <section class="menu d-flex pt-1">
+                     <div id="menubarProgrammer"  class="btn menu-btn menubar border-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="  mt-1 bi bi-justify menu-icon text-Secondary p-2" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                     </div>
+                     <span class="fs-5 fw-bold pe-none mt-3">Programmer</span>
+                     
+                  </section>
+
+                  <section>
+                     <div>
+                        <section class="d-flex flex-column " >
+                           <div class="prev-operation">
+                              <span  class="text-Secondary p-2" id="historyDisplay-programming">0</span>
+                           </div>
+                           <div class="curr-operation  px-2"id="display" >
+                              <span style="font-size: 34px;font-weight: 500; " class="displayMain"  id="displayMain-programming">0</span>
+                           </div>
+                        </section>
+
+                        <ul class="mt-1 ">
+                           <li onclick="" class="Basis px-2 liModes "  id="basisHex"> Hex :<span id="Hex" class=""></span></li>
+                           <li onclick="" style=" border-left : 2px solid #A46BF5; background-color: #ffffff75;" class="Basis px-2  liModes"  id="basisDes">DES : <span id="des" class=""></span></li>
+                           <li onclick="" class="Basis px-2 liModes "  id="basisOct">OCT : <span id="oct" class=""></span></li>
+                           <li onclick="" class="Basis px-2 liModes "  id="basisBin">BIN : <span id="bin" class=""></span></li>
+                        </ul>
+                        <section class="numboxProgrammer">
+   
+                              
+                           <div class="buttons2 mb-3 mx-2 boxNum">
+                              <button onclick="addNum(this.value)"  class="btn2 " id="Ahex" value="A">A</button>
+                              <button onclick="caclProgrammer('(')" class="btn2" value="(">(</button>
+                              <button onclick="caclProgrammer(')')"class="btn2" value=")">)</button>
+                              <button onclick="C2()" class="btn2" value="Clear">C</button>
+                              <button onclick="backspace2()" class="btn2" value="backspace"><i class="fa-solid fa-delete-left"></i></button>
+                              <button onclick="addNum(this.value)"  class="btn2" id="Bhex" value="B">B</button>
+                              <button onclick="changeSign2()" class="btn2" value="+/_">+/_</button>
+                              <button onclick="calculatePercentage2()" class="btn2" value="%">%</button>
+                              <button onclick="CE2()" class="btn2" value="CE">CE</button>
+                              <button onclick="caclProgrammer('/')" class="btn2" value="/">&divide;</button>
+                              <button onclick="addNum(this.value)"  class="btn2" id="Chex" value="C">C</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP7" value="7">7</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP8" value="8">8</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP9" value="9">9</button>
+                              <button onclick="caclProgrammer('*')" class="btn2" value="*">x</button>
+                              <button onclick="addNum(this.value)"  class="btn2" id="Dhex" value="D">D</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP4" value="4">4</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP5" value="5">5</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP6" value="6">6</button>
+                              <button onclick="caclProgrammer('-')" class="btn2" value="-">-</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="Ehex" value="E">E</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP1" value="1">1</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP2" value="2">2</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="numP3" value="3">3</button>
+                              <button onclick="caclProgrammer('+')" class="btn2" value="+">+</button>
+                              <button onclick="addNum(this.value)" class="btn2" id="Fhex" value="F">F</button>
+                              
+                              <button onclick="addNum(this.value)" class="btn2" id="numP0" value="0">0</button>
+                              <button onclick="" class="btn2" id="dot2" value=".">.</button>
+                              
+
+                           </div>
+                           <button  id="equlProgramming" class="btn2" value="=">=</button>
+                        </section>
+                        
+                     </div>
+
+                     
+                  </section>
+
+                  
+               </div>
+
+
+               <!--Convet Length-->
+               <div id="ConvertLength" class="modes">
+                  <!--ctrl btn and title -->
+                  <section class="title d-flex fs-6 fw-lighter ">
+                     <span style="padding: 8px; padding-left: 10px;">Calculator</span>
+                     <div class="ctrl-btns d-flex text-center">
+                        <div class="ctrl-btn px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7c2xCQAwDAQx7790AukCLl28QYKrrwAAAAAAAADgc5Y1rpskN66bJDeumyQHAAAAAAAAAE/VBW1Ir1GTIcCQAAAAAElFTkSuQmCC">
+                        </div>
+                        <div class="ctrl-btn px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVHhe7c4xagQwAAPB+/+nkz44pFgPOKAB1avPzMzMzMyfvv7ZrjtFXt51p8jLu+4UeXnX8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT/8UDE//FAxP/xQMT//Qy8vutOkZd33Sny8q47RV7ezMzMzMyvPp9v5AB9n9NSgHEAAAAASUVORK5CYII=">
+                        </div>
+                        <div class="ctrl-btn close px-3 py-2">
+                           <img class="ctrl-btn-img " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVHhe7ZpbCsIwFAW7JbfkRnTjornSA6UkpY/kvnoGgrR+dOagf50IIYQQQgghR3nMnx5Qd3mV8ynn+b+yRRzERZxUkAd952M9AuLhM3wE+aktH2g5wjoeLsP/Dq0Ha45g7mApYB4PLETcxANNIXfxQEPMbTwYKeg+HowQDRMPegqHiwc9xMPGgysB4ePBmZA08eBIULp4sCcsbTzYCkwfD1qht4gHtRGWJ3U8aI1wi3jh1gO04nFSj1CLl+vavXQjtOLl/tZ3KdgTmHaEI2HpRjgTlGaEKyHhR+gREHaEnuLhRhghHGaEkaLuR9AQdDuCppi7ESyE3IxgKWI+grlAwcyBr8gU3uVYx4P1COKmgjzIOh5gBLV4oP5y4gaeXAghhBBCCPHPNP0A9SOjGKIGTtMAAAAASUVORK5CYII=">
+                        </div>
+                     </div>
+                  </section>
+
+                   <!--forms and history-->
+                   <section class="menu d-flex pt-1">
+                     <div id="menubarConvertLength"  class="btn menu-btn menubar border-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="  mt-1 bi bi-justify menu-icon text-Secondary p-2" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                     </div>
+                     <span class="fs-5 fw-bold pe-none mt-3">Length</span>
+                     
+                  </section>
+
+                  <section>
+                     <div class=" w-50 px-3 ">
+                           <div class="curr-operation inputValue fs-3 px-2"id="displayLength" >
+                              <span style="font-size: 34px;font-weight: 500; " class="fw-bold "  id="displayMain-Length">0</span>
+                           </div>
+                        <form action="" class="">
+                           <select class="form-select border-0 selectMenue" id="selectMenue1" name="sellist1">
+                             <option>Nanometer</option>
+                             <option>microns</option>
+                             <option>milimeters</option>
+                             <option>centimeter</option>
+                             <option>Meter</option>
+                             <option>kilometer</option>
+                             <option>Inches</option>
+                             <option>Feet</option>
+                             <option>Yards</option>
+                             <option>Miles</option>
+                             <option>Nautical miles</option>
+                           </select>
+                           <br>
+                         </form>
+                     </div>
+                     <div class=" w-50 px-3 ">
+                        <div class="inputValue fs-3 py-2" id="display2Length">
+                           0
+                        </div>
+                        <form action="">
+                           <select class="form-select border-0 selectMenue" id="selectMenue2" name="sellist1">
+                              <option>Nanometer</option>
+                              <option>microns</option>
+                              <option>milimeters</option>
+                              <option>centimeter</option>
+                              <option>Meter</option>
+                              <option>kilometer</option>
+                              <option>Inches</option>
+                              <option>Feet</option>
+                              <option>Yards</option>
+                              <option>Miles</option>
+                              <option>Nautical miles</option>
+                            </select>
+                           <br>
+                        </form>
+                     </div>
+                     
+                  </section>
+
+                  <!--Numbers-->
+                  <section>
+                        <div class="buttons3 mb-3 mx-2 boxNum">
+                           <button onclick="ConvertLength()" class="btn3 text-white fs-6" id="update" value="">update</button>
+                           <button onclick="CE3()" class="btn3" id="ce" value="ce">CE</button>
+                           <button onclick="backspace3()" class="btn3" id="back3" value="back"><i class="fa-solid fa-delete-left"></i></button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL7" value="7">7</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL8" value="8">8</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL9" value="9">9</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL4" value="4">4</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL5" value="5">5</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL6" value="6">6</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL1" value="1">1</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL2" value="2">2</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL3" value="3">3</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="dot3" value=".">.</button>
+                           <button onclick="addNumLength(this.value)" class="btn3" id="numCL0" value="0">0</button>
+                           <button onclick="" class="btn3" id="" value=" "></button>
+                        </div>
+                  </section>
+               </div>
+
+               
+
+            </div>
+         </div>
+
+      </section>
+     
+      <!--CALLENGE ACSEPTED-->
+      <section  class="py-3 sectionColorBrightPurple">
+         <div class="py-5 introduction cuteBorder text-center container-fluid">
+            <h2 class="fst-italic h2">Calculator challenge</h2>
+            <h6 class="container h5 fst-italic"id ="demo">this website is essentially a personal project that I created with the intention of improving my programming skills, specifically in JavaScript. In addition to that, I also wanted to showcase my abilities to potential employers, such as for internship opportunities.<br>
+               The website itself is designed to be a challenge for me to create and maintain, as I am constantly working on improving its functionality and appearance. This includes implementing new features, optimizing existing code, and fixing any bugs that arise.
+               <br>
+               Overall, this project has been a great way for me to grow as a programmer and gain practical experience in web development
+               </h6>
+               <div class="row  py-2 d-flex justify-content-center">
+                  <span></span>
+                  <img class="col-lg-3 col-md-6 col-sm-10 " src="img/tumblr_njzrzaICmG1s3h43ko1_500.gif" alt="">
+               </div>
+            
+         </div>
+         
+      </section>
+
+
+      <!--DISCRIPTION -->
+      <section class="py-5 cuteBorder sectionColordarkViolet">
+         <div class="row g-0 d-flex align-item-center  section3Description  ">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                  <h2 class="w-75 mx-auto">Standard calculator</h2>
+                  <p class="w-75 mx-auto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+            </div>
+            <div class="col-md-6 d-none d-md-block"><img class="w-100" src="img/kelly-sikkema-3-Tc_5LROrM-unsplash.jpg" alt=""></div>
+         </div>
+         <div class="row g-0 d-flex align-item-center  section3Description">
+            <div class="col-md-6 d-none d-md-block"><img class="w-100" src="img/aaron-lefler-ySZdYkPGEbs-unsplash 22- Copy.jpg" alt=""></div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                  <h2 class="w-75 mx-auto">Standard calculator</h2>
+                  <p class="w-75 mx-auto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+            </div>
+            <div class="row g-0 d-flex align-item-center  section3Description">
+               <div class="col-md-6 d-flex flex-column justify-content-center">
+                     <h2 class="w-75 mx-auto">Standard calculator</h2>
+                     <p class="w-75 mx-auto">n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+               </div>
+               <div class="col-md-6 d-none d-md-block"><img class="w-100" src="img/mika-baumeister-Wpnoqo2plFA-unsplash.jpg" alt=""></div>
+            </div>
+         </div>
+      </section>
+
+      <!--CONVERT-->
+      <section class="py-5 cuteBorder container-fluid section4Convert sectionColorBrightPurple">
+         <div id="ConvertTittle" class="fst-italic ps-5 animate__fadeInLeft wow animate__animated" >
+            <span>Convert</span>
+            <p class="descriptionConvet  fs-6 fst-italic">
+               "Convert" means to change something into a different form or format, often for a different purpose or use.
+            </p>
+         </div>
+         
+         <span id="q1" class="QuestionMark " ><i class="fa-solid fa-question"></i></span>
+         <span id="q2" class="QuestionMark " ><i class="fa-solid fa-question"></i></span>
+         <span id="q3" class="QuestionMark " ><i class="fa-solid fa-question"></i></span>
+         <span id="q4" class="QuestionMark " ><i class="fa-solid fa-question"></i></span>
+         <span id="q5" class="QuestionMark d-none d-md-block" ><i class="fa-solid fa-question"></i></span>
+         <span id="q6" class="QuestionMark " ><i class="fa-solid fa-question"></i></span>
+         <span id="q7" class="QuestionMark " ><i class="fa-solid fa-question"></i></span>
+         <div id="arrowsKgPound" class="d-flex  align-item-center  animate__tada wow animate__animated">
+            <span id="kg" class=" fs-2 fst-italic   px-1" >Kg</span> 
+            <span id="arrows" class="fs-3 mt-2 " ><i class="fa-solid fa-arrows-left-right"></i></span>
+            <span id="Pound" class=" fs-2 fst-italic  px-1" >Pound</span>
+         </div>
+         <div id="arrowsMileKm" class="d-flex  align-item-center d-none d-md-block  animate__tada wow animate__animated">
+            <span  class=" fs-2 fst-italic   px-1" >mile</span> 
+            <span  class="fs-3 mt-2 " ><i class="fa-solid fa-arrows-left-right"></i></span>
+            <span  class=" fs-2 fst-italic  px-1" >Km</span>
+         </div>
+         
+      </section>
+
+   </article>
+
+   <!--Footer-->
+   <footer class="pt-5 mt-5 sectionColordarkViolet ">
+      <div class="row p-5  ">
+         <div class="col-6">
+            <h2>𝑪𝒂𝒍𝒄𝒖𝒍𝒂𝒕𝒐𝒓 𝒄𝒉𝒂𝒍𝒍𝒆𝒏𝒈𝒆</h2>
+            <p>n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+         </div>
+         <div class="col-6 text-center" >
+            <h2>𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝒖𝒔</h2>
+            <div >
+               <h5 class="py-3">reihanejafaie@gmail.com</h5>
+               <div class="d-flex justify-content-center " style="cursor: pointer;">
+                  <i class="fa-brands fa-telegram px-4 fs-4"></i>
+                  <i class="fa-brands fa-github px-4 fs-4"></i>
+                  <i class="fa-brands fa-discord px-4 fs-4"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+
+   <!---->
+
+
+
+     <script src="script/JQuery.js"></script>
+     <script src="script/bootstrap.bundle.js"></script>
+     <script src="script/script.js"></script>
+     <script src="script/wow.js"></script>
+
+    <script >
+      new WOW().init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+</body>
+</html>

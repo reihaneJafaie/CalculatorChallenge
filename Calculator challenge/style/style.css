@@ -1,0 +1,376 @@
+@import url(reset.css);
+
+body{
+   background-color: #FFF2F2;
+   font-family: Arial, sans-serif;
+   overflow-x: hidden;
+   
+}
+.cuteBorder{
+   border-style: solid;
+    border-width: 3px;
+    border-image: linear-gradient(to left, #00000000 1%, #44165aa6 50%, #00000000 100%) 
+                  100% 0 100% 0/1px 0 0px 0 stretch;
+}
+.sectionColorBrightPurple{
+   color: #6d1ca3;
+}
+.sectionColordarkViolet{
+   color: #42305c;
+}
+
+/**NAV LI**/
+.alistheader {
+   text-decoration: none;
+   position: relative;
+   z-index: 2;
+  
+ }
+.alistheader:hover::before {
+   bottom: 0;
+   height: 100%;
+}
+.alistheader::before {
+   content: '';
+   background-color: #A46BF5;
+   position: absolute;
+   left: 0;
+   bottom: 3px;
+   width: 100%;
+   height: 3px;
+   z-index: -1;
+   transition: all .3s ease-in-out;
+   border-radius: 3px;
+}
+
+/**BUTTON IN NAV FOR SEARCH**/
+.buttonSearch {
+   background-color: #9e5ff7;
+}
+
+.buttonSearch:hover{
+   box-shadow: 2px 2px 4px 3px rgba(191,136,219,0.68);
+-webkit-box-shadow: 2px 2px 4px 3px rgba(191,136,219,0.68);
+-moz-box-shadow: 2px 2px 4px 3px rgba(191,136,219,0.68);
+transition: 00.5s;
+}
+
+
+/** SECTION FIRST **/
+
+
+/* DESINE CALCUTAYOR*/
+
+#calc {
+	background-color: #f3f3f3;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 27px rgba(0,0,0,0.23);
+	height: 506px;
+	width: 323px;
+   position: relative;
+	margin: auto;
+
+   
+}
+
+#calc:hover {
+	background-color: #ecebeb;
+   transition: 0.25s;
+}
+
+.ctrl-btns{
+	margin-left: auto;
+}
+.ctrl-btn:hover{
+	background-color: #6159592e;
+   transition: 0.25s;
+}
+
+.close:hover{
+	background-color: #df1111;
+   transition: 0.25s;
+}
+.ctrl-btn-img{
+	width: 15px;
+}
+
+.iconshover:hover {
+   background-color: rgba(197, 192, 192, 0.274);
+   border-radius: 2px;
+   transition: 0.5s;
+}
+
+.history-btn{
+	margin-left: auto;
+}
+
+.history-img{
+	width: 35px;
+}
+
+.prev-operation, .curr-operation{
+	margin-left: auto;
+	padding-right: 12px;
+}
+.mem-btns .btn{
+   border-radius: 0px;
+}
+.mem-btns > .btn{
+	 flex: 1;
+	 font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    height: 25px;
+    padding-top: 4px;
+}
+.mem-btns > .btn:hover{
+   background-color: #8a818134;
+   transition: 0.25s;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(6,.5fr);
+	grid-gap: 6px;
+
+}
+.buttons .btn{
+   box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.199);
+   -webkit-box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.219);
+   -moz-box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.123);
+
+   border: 1px solid #7271723b;
+   font-size: 16px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+.buttons > .btn {
+	background-color: #ffffff75;
+	height: 39px;
+}
+
+.buttons > .btn:hover{
+	background-color: #6159592e !important;
+   border: 1px solid #7271723b;
+
+}
+
+#equal{
+   background-color: #A46BF5;
+}
+#equal:hover{
+   background-color: rgb(145, 110, 196) !important;
+   
+}
+
+
+
+/**SIDE NAV**/
+.sidenav {
+   
+   width: 0px;
+   height: 452px;
+   background-color: #ebe0fa;
+   position: absolute;
+   top:52px;
+   transition: 0.5s;
+   overflow-y: scroll;
+   scrollbar-color:#bba2df #A46BF5 ;
+  scrollbar-width: thin;
+  z-index: 1;
+}
+ 
+.sidenav div a{
+    text-decoration: none;
+    color: #2e233d;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6d1ca3;
+}
+.navslid2 div{
+   padding-top: 30px;
+}
+.navslid2 div:hover{
+   background-color: #e1b0ff;
+   cursor: pointer;
+}
+.navslid2{
+  z-index: 2;
+}
+
+
+
+
+/**CALC PROGRAMMER**/
+
+.buttons2 {
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-template-rows: repeat(6,.5fr);
+	grid-gap: 2px;
+
+}
+.buttons2 .btn2{
+   box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.199);
+   -webkit-box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.219);
+   -moz-box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.123);
+
+   border: 1px solid #7271723b;
+   font-size: 16px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+.buttons2 > .btn2 {
+	background-color: #ffffff75;
+	height: 30px;
+}
+
+.buttons2 > .btn2:hover{
+	background-color: #6159592e !important;
+   border: 1px solid #7271723b;
+
+}
+
+.Basis{
+   width: 90%;
+}
+
+.Basis:hover {
+   border-left:2px solid #A46BF5;
+   cursor: pointer;
+   background-color: #ffffff75;;
+}
+
+.numboxProgrammer{
+   position: relative;
+}
+#equlProgramming{
+   background-color: #A46BF5;
+   position: absolute;
+   bottom: 1px;
+   right: 7px;
+   height: 29px;
+   width: 120px;
+}
+#equlProgramming:hover{
+   cursor: pointer;
+   background-color: #9e5ff7;;
+}
+
+.programmer{
+   display: none;
+}
+
+
+/*Convert part*/
+#ConvertLength{
+   display: none;
+}
+
+
+.buttons3 {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(4,.5fr);
+	grid-gap: 2px;
+
+}
+.buttons3 .btn3{
+   box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.199);
+   -webkit-box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.219);
+   -moz-box-shadow: -4px 4px 2px -1px rgba(143, 143, 143, 0.123);
+
+   border: 1px solid #7271723b;
+   font-size: 16px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+.buttons3 > .btn3 {
+	background-color: #ffffff75;
+	height: 31px;
+   border-radius: 3px;
+}
+
+.buttons3 > .btn3:hover{
+	background-color: #6159592e !important;
+   border: 1px solid #7271723b;
+
+}
+
+#update{
+   background-color: #A46BF5;
+}
+#update:hover{
+   background-color: rgb(145, 110, 196) !important;
+   
+}
+
+/**SECTION 4**/
+.section4Convert{
+   height: 450px;
+   position: relative;
+}
+#ConvertTittle{
+   font-size: 72px;
+   position: absolute;
+   bottom: 27%;
+   left: 5%;
+}
+
+.QuestionMark{
+   font-size: 60px;
+   color: #A46BF5;
+   
+}
+
+#q1{
+   position: absolute;
+   top:3%;
+   left: 10%;
+   
+}
+#q2{
+   position: absolute;
+   top:10%;
+   left: 25%;
+}
+#q3{
+   position: absolute;
+   bottom:3% ;
+   left: 5%;
+}
+#q4{
+   position: absolute;
+   top:7%;
+   right: 10%;
+}
+#q5{
+   position: absolute;
+   top:60%;
+   right: 25%;
+}
+#q6{
+   position: absolute;
+   bottom:3%;
+   right: 4%;
+}
+#q7{
+   position: absolute;
+   bottom:3%;
+   right: 51%;
+}
+#arrowsKgPound{
+   position: absolute;
+   top:20%;
+   right: 30%;
+}
+#arrowsMileKm{
+   position: absolute;
+   top:37%;
+   right: 16%;
+}
+
+/**Footer**/
+footer{
+   background-color: #A46BF5;
+}
